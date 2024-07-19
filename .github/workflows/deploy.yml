@@ -3,18 +3,18 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 设置要触发部署的分支
+      - main  # 設置要觸發部署的分支
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3  # 更新到 v3
     
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3  # 更新到 v3
       with:
-        node-version: '14'  # 设置 Node.js 版本
+        node-version: '16'  # 更新到 Node.js 16
         
     - name: Install dependencies
       run: |
@@ -30,4 +30,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./wv_demo/dist  # 设置要部署的目录
+        publish_dir: ./wv_demo/dist  # 設置要部署的目錄
