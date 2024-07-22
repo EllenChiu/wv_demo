@@ -1,14 +1,14 @@
 <template>
-  <ScanPage/>
+  <ScanCard/>
 </template>
 
 <script>
-import ScanPage from './views/ScanPage.vue'
+import ScanCard from './views/ScanCard.vue'
 
 export default {
   name: 'App',
   components: {
-    ScanPage
+    ScanCard
   }
 }
 </script>
